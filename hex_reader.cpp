@@ -3,6 +3,21 @@
 #include <iomanip>
 #include <vector>
 
+void detectMagicNumber(std::vector<unsigned char>& buffer) {
+    if (buffer[0] == 0x55 && buffer[1] == 0xAA && buffer[2] == 0x38 && buffer[3] == 0x2D)
+        std::cout << "Type detecte: ISO Wii" << std::endl;
+    else if (buffer[0] == 0x55 && buffer[1] == 0x38)
+        std::cout << "Type detecte: Archive U8 (asset Wii)" << std::endl;
+    else if (buffer[0] == 0x52 && buffer[1] == 0x45 && buffer[2] == 0x56 && buffer[3] == 0x20)
+        std::cout << "Type detecte: Fichier REV (Sonic)" << std::endl;
+    else if (buffer[0] == 0x4D && buffer[1] == 0x5A)
+        std::cout << "Type detecte: Executable Windows" << std::endl;
+    else if (buffer[0] == 0x89 && buffer[1] == 0x50 && buffer[2] == 0x4E && buffer[3] == 0x47)
+        std::cout << "Type detecte: Image PNG" << std::endl;
+    else
+        std::cout << "Type detecte: Inconnu" << std::endl;
+}
+
 void printHexLine(unsigned long offset, std::vector<unsigned char>& buffer, int size) {
     // Affiche l'offset
     std::cout << std::hex << std::setw(8) << std::setfill('0') << offset << "  ";
@@ -43,6 +58,9 @@ int main(int argc, char* argv[]) {
 
     std::vector<unsigned char> buffer(16);
     unsigned long offset = 0;
+
+    detectMagicNumber(buffer);
+    std::cout << std::endl;
 
     while (file.read(reinterpret_cast<char*>(buffer.data()), 16)) {
         int bytesRead = file.gcount();
