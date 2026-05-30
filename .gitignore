@@ -38,6 +38,9 @@
 *.exe
 *.out
 *.app
+*.iso
+*.rvz
+*.wbfs
 
 # Build directories
 build/
