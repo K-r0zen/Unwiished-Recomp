@@ -24,6 +24,29 @@ uint32_t readU32BE(std::ifstream& file) {
     return (bytes[0] << 24) | (bytes[1] << 16) | (bytes[2] << 8) | bytes[3];
 }
 
+void readPartitionTable(std::ifstream& file) {
+    // La table des partitions est à l'offset 0x40000
+    file.seekg(0x40000);
+    
+    uint32_t partCount = readU32BE(file);
+    uint32_t partTableOffset = readU32BE(file) << 2;
+    
+    std::cout << "\n=== Table des partitions ===" << std::endl;
+    std::cout << "Nombre de partitions : " << std::dec << partCount << std::endl;
+    
+    // Lire chaque partition
+    file.seekg(partTableOffset);
+    for (uint32_t i = 0; i < partCount; i++) {
+        uint32_t partOffset = readU32BE(file) << 2;
+        uint32_t partType = readU32BE(file);
+        
+        std::cout << "Partition " << i << " : offset=0x" 
+                  << std::hex << partOffset 
+                  << " type=" << (partType == 0 ? "DATA" : "UPDATE")
+                  << std::endl;
+    }
+}
+
 int main(int argc, char* argv[]) {
     if (argc < 2) {
         std::cout << "Usage: iso_reader <fichier.iso>" << std::endl;
@@ -57,7 +80,8 @@ int main(int argc, char* argv[]) {
     } else {
         std::cout << "Format    : Non reconnu (magic: " << std::hex << magic << ")" << std::endl;
     }
-
+    
+    readPartitionTable(file);
     file.close();
     return 0;
 }
