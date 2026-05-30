@@ -8,9 +8,13 @@
 
 // Structure de l'en-tête d'un ISO Wii
 struct WiiHeader {
-    char gameID[6];        // Ex: "RSOP8P" pour Sonic Unleashed Wii
+    char gameID[6];
+    char disc_number;
+    char disc_version;
+    char audio_streaming;
+    char streaming_buf_size;
     char padding[2];
-    char gameName[64];     // Nom complet du jeu
+    char gameName[64];
 };
 
 // Lit un entier 32 bits en big-endian (format Wii)
@@ -32,13 +36,18 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    // Lire l'en-tête
-    WiiHeader header;
-    file.read(reinterpret_cast<char*>(&header), sizeof(WiiHeader));
+    // Game ID est toujours aux premiers 6 bytes
+    char gameID[7] = {0};
+    file.read(gameID, 6);
+
+    // Game Name commence exactement à l'offset 0x20
+    char gameName[65] = {0};
+    file.seekg(0x20);
+    file.read(gameName, 64);
 
     std::cout << "=== Wii ISO Reader ===" << std::endl;
-    std::cout << "Game ID   : " << std::string(header.gameID, 6) << std::endl;
-    std::cout << "Game Name : " << std::string(header.gameName, 64) << std::endl;
+    std::cout << "Game ID   : " << gameID << std::endl;
+    std::cout << "Game Name : " << gameName << std::endl;
 
     // Vérifier le magic number Wii à l'offset 0x18
     file.seekg(0x18);
