@@ -1572,7 +1572,7 @@ label_8016A150:
     // 0x8016A15C: stfd
     MEM_WRITEF64(ctx->r[1] + 32, ctx->f[31]);
     // 0x8016A160: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[1] + 40, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[1] + 40, ctx->gqr[0]);
     // 0x8016A164: stw
     MEM_WRITE32(ctx->r[1] + 28, ctx->r[31]);
     // 0x8016A168: lis

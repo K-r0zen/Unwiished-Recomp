@@ -261,11 +261,11 @@ label_8023C050:
     // 0x8023C068: stfd
     MEM_WRITEF64(ctx->r[12] + -16, ctx->f[31]);
     // 0x8023C06C: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[12] + -8, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[12] + -8, ctx->gqr[0]);
     // 0x8023C070: stfd
     MEM_WRITEF64(ctx->r[12] + -32, ctx->f[30]);
     // 0x8023C074: psq_st
-    PSQ_STORE_PAIR(ctx->ps[30][0], ctx->ps[30][1], ctx->r[12] + -24, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[30][0], &ctx->ps[30][1], ctx->r[12] + -24, ctx->gqr[0]);
     // 0x8023C078: stw
     MEM_WRITE32(ctx->r[12] + -36, ctx->r[31]);
     // 0x8023C07C: stw

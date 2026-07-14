@@ -3823,7 +3823,7 @@ label_800A599C:
     // 0x800A59A8: stfd
     MEM_WRITEF64(ctx->r[1] + 48, ctx->f[31]);
     // 0x800A59AC: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[1] + 56, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[1] + 56, ctx->gqr[0]);
     // 0x800A59B0: addi
     ctx->r[11] = (int32_t)ctx->r[1] + 48;
     // 0x800A59B4: bl

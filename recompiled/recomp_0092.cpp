@@ -7485,7 +7485,7 @@ label_801DEFE4:
     // 0x801DEFF0: stfd
     MEM_WRITEF64(ctx->r[1] + 176, ctx->f[31]);
     // 0x801DEFF4: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[1] + 184, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[1] + 184, ctx->gqr[0]);
     // 0x801DEFF8: addi
     ctx->r[11] = (int32_t)ctx->r[1] + 176;
     // 0x801DEFFC: bl

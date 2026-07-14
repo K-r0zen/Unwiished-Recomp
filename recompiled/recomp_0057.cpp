@@ -3569,7 +3569,7 @@ label_801276E0:
     // 0x801276EC: stfd
     MEM_WRITEF64(ctx->r[1] + 32, ctx->f[31]);
     // 0x801276F0: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[1] + 40, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[1] + 40, ctx->gqr[0]);
     // 0x801276F4: stw
     MEM_WRITE32(ctx->r[1] + 28, ctx->r[31]);
     // 0x801276F8: fmr

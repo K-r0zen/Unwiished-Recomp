@@ -2567,7 +2567,7 @@ label_80049F14:
     // 0x80049F20: stfd
     MEM_WRITEF64(ctx->r[1] + 32, ctx->f[31]);
     // 0x80049F24: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[1] + 40, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[1] + 40, ctx->gqr[0]);
     // 0x80049F28: stw
     MEM_WRITE32(ctx->r[1] + 28, ctx->r[31]);
     // 0x80049F2C: fmr

@@ -2487,11 +2487,11 @@ label_800E51DC:
     // 0x800E51F4: stfd
     MEM_WRITEF64(ctx->r[12] + -16, ctx->f[31]);
     // 0x800E51F8: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[12] + -8, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[12] + -8, ctx->gqr[0]);
     // 0x800E51FC: stfd
     MEM_WRITEF64(ctx->r[12] + -32, ctx->f[30]);
     // 0x800E5200: psq_st
-    PSQ_STORE_PAIR(ctx->ps[30][0], ctx->ps[30][1], ctx->r[12] + -24, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[30][0], &ctx->ps[30][1], ctx->r[12] + -24, ctx->gqr[0]);
     // 0x800E5204: stw
     MEM_WRITE32(ctx->r[12] + -36, ctx->r[31]);
     // 0x800E5208: stw
@@ -3361,7 +3361,7 @@ label_800E5814:
     // 0x800E582C: stfd
     MEM_WRITEF64(ctx->r[12] + -16, ctx->f[31]);
     // 0x800E5830: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[12] + -8, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[12] + -8, ctx->gqr[0]);
     // 0x800E5834: stw
     MEM_WRITE32(ctx->r[12] + -20, ctx->r[31]);
     // 0x800E5838: stw
@@ -4489,7 +4489,7 @@ label_800E5FFC:
     // 0x800E6008: stfd
     MEM_WRITEF64(ctx->r[1] + 64, ctx->f[31]);
     // 0x800E600C: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[1] + 72, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[1] + 72, ctx->gqr[0]);
     // 0x800E6010: stw
     MEM_WRITE32(ctx->r[1] + 60, ctx->r[31]);
     // 0x800E6014: stw
@@ -5772,7 +5772,7 @@ label_800E6930:
     // 0x800E6948: stfd
     MEM_WRITEF64(ctx->r[12] + -16, ctx->f[31]);
     // 0x800E694C: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[12] + -8, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[12] + -8, ctx->gqr[0]);
     // 0x800E6950: stw
     MEM_WRITE32(ctx->r[12] + -20, ctx->r[31]);
     // 0x800E6954: stw
@@ -6133,7 +6133,7 @@ label_800E6BC8:
     // 0x800E6BE0: stfd
     MEM_WRITEF64(ctx->r[12] + -16, ctx->f[31]);
     // 0x800E6BE4: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[12] + -8, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[12] + -8, ctx->gqr[0]);
     // 0x800E6BE8: stw
     MEM_WRITE32(ctx->r[12] + -20, ctx->r[31]);
     // 0x800E6BEC: stw

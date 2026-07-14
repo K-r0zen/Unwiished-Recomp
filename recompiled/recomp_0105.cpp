@@ -345,11 +345,11 @@ label_80226FEC:
     // 0x80226FF8: stfd
     MEM_WRITEF64(ctx->r[1] + 112, ctx->f[31]);
     // 0x80226FFC: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[1] + 120, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[1] + 120, ctx->gqr[0]);
     // 0x80227000: stfd
     MEM_WRITEF64(ctx->r[1] + 96, ctx->f[30]);
     // 0x80227004: psq_st
-    PSQ_STORE_PAIR(ctx->ps[30][0], ctx->ps[30][1], ctx->r[1] + 104, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[30][0], &ctx->ps[30][1], ctx->r[1] + 104, ctx->gqr[0]);
     // 0x80227008: addi
     ctx->r[11] = (int32_t)ctx->r[1] + 96;
     // 0x8022700C: bl
@@ -706,7 +706,7 @@ label_8022727C:
     // 0x80227288: stfd
     MEM_WRITEF64(ctx->r[1] + 16, ctx->f[31]);
     // 0x8022728C: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[1] + 24, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[1] + 24, ctx->gqr[0]);
     // 0x80227290: stw
     MEM_WRITE32(ctx->r[1] + 12, ctx->r[31]);
     // 0x80227294: fmr

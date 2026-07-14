@@ -3012,7 +3012,7 @@ label_801E0A0C:
     // 0x801E0A18: stfd
     MEM_WRITEF64(ctx->r[1] + 16, ctx->f[31]);
     // 0x801E0A1C: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[1] + 24, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[1] + 24, ctx->gqr[0]);
     // 0x801E0A20: stw
     MEM_WRITE32(ctx->r[1] + 12, ctx->r[31]);
     // 0x801E0A24: mr
@@ -8498,11 +8498,11 @@ label_801E2C0C:
     // 0x801E2C18: stfd
     MEM_WRITEF64(ctx->r[1] + 80, ctx->f[31]);
     // 0x801E2C1C: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[1] + 88, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[1] + 88, ctx->gqr[0]);
     // 0x801E2C20: stfd
     MEM_WRITEF64(ctx->r[1] + 64, ctx->f[30]);
     // 0x801E2C24: psq_st
-    PSQ_STORE_PAIR(ctx->ps[30][0], ctx->ps[30][1], ctx->r[1] + 72, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[30][0], &ctx->ps[30][1], ctx->r[1] + 72, ctx->gqr[0]);
     // 0x801E2C28: addi
     ctx->r[11] = (int32_t)ctx->r[1] + 64;
     // 0x801E2C2C: bl

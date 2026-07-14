@@ -8554,7 +8554,7 @@ label_801FBDAC:
     // 0x801FBDB8: stfd
     MEM_WRITEF64(ctx->r[1] + 32, ctx->f[31]);
     // 0x801FBDBC: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[1] + 40, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[1] + 40, ctx->gqr[0]);
     // 0x801FBDC0: stw
     MEM_WRITE32(ctx->r[1] + 28, ctx->r[31]);
     // 0x801FBDC4: stw
@@ -8847,7 +8847,7 @@ label_801FBFA8:
     // 0x801FBFB4: stfd
     MEM_WRITEF64(ctx->r[1] + 32, ctx->f[31]);
     // 0x801FBFB8: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[1] + 40, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[1] + 40, ctx->gqr[0]);
     // 0x801FBFBC: stw
     MEM_WRITE32(ctx->r[1] + 28, ctx->r[31]);
     // 0x801FBFC0: stw

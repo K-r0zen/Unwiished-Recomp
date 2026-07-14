@@ -1719,7 +1719,7 @@ label_80046BE0:
     // 0x80046BEC: stfd
     MEM_WRITEF64(ctx->r[1] + 80, ctx->f[31]);
     // 0x80046BF0: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[1] + 88, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[1] + 88, ctx->gqr[0]);
     // 0x80046BF4: stw
     MEM_WRITE32(ctx->r[1] + 76, ctx->r[31]);
     // 0x80046BF8: stw

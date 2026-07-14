@@ -715,7 +715,7 @@ label_800CD714:
     // 0x800CD720: stfd
     MEM_WRITEF64(ctx->r[1] + 96, ctx->f[31]);
     // 0x800CD724: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[1] + 104, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[1] + 104, ctx->gqr[0]);
     // 0x800CD728: addi
     ctx->r[11] = (int32_t)ctx->r[1] + 96;
     // 0x800CD72C: bl

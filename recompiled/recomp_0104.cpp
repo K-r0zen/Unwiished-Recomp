@@ -13392,7 +13392,7 @@ label_8022601C:
     // 0x80226028: stfd
     MEM_WRITEF64(ctx->r[1] + 16, ctx->f[31]);
     // 0x8022602C: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[1] + 24, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[1] + 24, ctx->gqr[0]);
     // 0x80226030: stw
     MEM_WRITE32(ctx->r[1] + 12, ctx->r[31]);
     // 0x80226034: stw

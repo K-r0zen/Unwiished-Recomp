@@ -10973,7 +10973,7 @@ label_80168C14:
     // 0x80168C20: stfd
     MEM_WRITEF64(ctx->r[1] + 48, ctx->f[31]);
     // 0x80168C24: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[1] + 56, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[1] + 56, ctx->gqr[0]);
     // 0x80168C28: stw
     MEM_WRITE32(ctx->r[1] + 44, ctx->r[31]);
     // 0x80168C2C: stw

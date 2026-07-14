@@ -2473,7 +2473,7 @@ label_8000C6D4:
     // 0x8000C6E0: stfd
     MEM_WRITEF64(ctx->r[1] + 16, ctx->f[31]);
     // 0x8000C6E4: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[1] + 24, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[1] + 24, ctx->gqr[0]);
     // 0x8000C6E8: stw
     MEM_WRITE32(ctx->r[1] + 12, ctx->r[31]);
     // 0x8000C6EC: fmr

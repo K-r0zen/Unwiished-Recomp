@@ -4448,7 +4448,7 @@ label_8001F1E0:
     // 0x8001F1EC: stfd
     MEM_WRITEF64(ctx->r[1] + 16, ctx->f[31]);
     // 0x8001F1F0: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[1] + 24, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[1] + 24, ctx->gqr[0]);
     // 0x8001F1F4: stw
     MEM_WRITE32(ctx->r[1] + 12, ctx->r[31]);
     // 0x8001F1F8: stw

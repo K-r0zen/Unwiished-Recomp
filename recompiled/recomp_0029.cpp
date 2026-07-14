@@ -6178,7 +6178,7 @@ label_80093258:
     // 0x80093264: stfd
     MEM_WRITEF64(ctx->r[1] + 48, ctx->f[31]);
     // 0x80093268: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[1] + 56, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[1] + 56, ctx->gqr[0]);
     // 0x8009326C: stw
     MEM_WRITE32(ctx->r[1] + 44, ctx->r[31]);
     // 0x80093270: fmr

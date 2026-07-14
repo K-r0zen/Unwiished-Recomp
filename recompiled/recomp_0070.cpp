@@ -1658,7 +1658,7 @@ label_8015F024:
     // 0x8015F030: stfd
     MEM_WRITEF64(ctx->r[1] + 64, ctx->f[31]);
     // 0x8015F034: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[1] + 72, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[1] + 72, ctx->gqr[0]);
     // 0x8015F038: addi
     ctx->r[11] = (int32_t)ctx->r[1] + 64;
     // 0x8015F03C: bl

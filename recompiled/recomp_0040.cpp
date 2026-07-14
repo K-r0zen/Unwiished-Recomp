@@ -8414,7 +8414,7 @@ label_800CC918:
     // 0x800CC930: stfd
     MEM_WRITEF64(ctx->r[12] + -16, ctx->f[31]);
     // 0x800CC934: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[12] + -8, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[12] + -8, ctx->gqr[0]);
     // 0x800CC938: stw
     MEM_WRITE32(ctx->r[12] + -20, ctx->r[31]);
     // 0x800CC93C: stw

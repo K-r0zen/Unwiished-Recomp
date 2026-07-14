@@ -7757,7 +7757,7 @@ label_8003BA74:
     // 0x8003BA8C: stfd
     MEM_WRITEF64(ctx->r[12] + -16, ctx->f[31]);
     // 0x8003BA90: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[12] + -8, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[12] + -8, ctx->gqr[0]);
     // 0x8003BA94: stw
     MEM_WRITE32(ctx->r[12] + -20, ctx->r[31]);
     // 0x8003BA98: mr

@@ -346,7 +346,7 @@ label_803B79A8:
     // 0x803B79C0: stfd
     MEM_WRITEF64(ctx->r[12] + -16, ctx->f[31]);
     // 0x803B79C4: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[12] + -8, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[12] + -8, ctx->gqr[0]);
     // 0x803B79C8: stw
     MEM_WRITE32(ctx->r[12] + -20, ctx->r[31]);
     // 0x803B79CC: stw
@@ -922,7 +922,7 @@ label_803B7DFC:
     // 0x803B7E14: stfd
     MEM_WRITEF64(ctx->r[12] + -16, ctx->f[31]);
     // 0x803B7E18: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[12] + -8, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[12] + -8, ctx->gqr[0]);
     // 0x803B7E1C: stw
     MEM_WRITE32(ctx->r[12] + -20, ctx->r[31]);
     // 0x803B7E20: stw
@@ -2875,7 +2875,7 @@ label_803B8BC0:
     // 0x803B8BD8: stfd
     MEM_WRITEF64(ctx->r[12] + -16, ctx->f[31]);
     // 0x803B8BDC: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[12] + -8, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[12] + -8, ctx->gqr[0]);
     // 0x803B8BE0: stw
     MEM_WRITE32(ctx->r[12] + -20, ctx->r[31]);
     // 0x803B8BE4: fmr
@@ -3580,7 +3580,7 @@ label_803B90DC:
     // 0x803B90E8: stfd
     MEM_WRITEF64(ctx->r[1] + 80, ctx->f[31]);
     // 0x803B90EC: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[1] + 88, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[1] + 88, ctx->gqr[0]);
     // 0x803B90F0: stw
     MEM_WRITE32(ctx->r[1] + 76, ctx->r[31]);
     // 0x803B90F4: fmr
@@ -6104,7 +6104,7 @@ label_803BA2A8:
     // 0x803BA2C0: stfd
     MEM_WRITEF64(ctx->r[12] + -16, ctx->f[31]);
     // 0x803BA2C4: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[12] + -8, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[12] + -8, ctx->gqr[0]);
     // 0x803BA2C8: stw
     MEM_WRITE32(ctx->r[12] + -20, ctx->r[31]);
     // 0x803BA2CC: stw
@@ -8118,11 +8118,11 @@ label_803BAED8:
     // 0x803BAEF0: stfd
     MEM_WRITEF64(ctx->r[12] + -16, ctx->f[31]);
     // 0x803BAEF4: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[12] + -8, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[12] + -8, ctx->gqr[0]);
     // 0x803BAEF8: stfd
     MEM_WRITEF64(ctx->r[12] + -32, ctx->f[30]);
     // 0x803BAEFC: psq_st
-    PSQ_STORE_PAIR(ctx->ps[30][0], ctx->ps[30][1], ctx->r[12] + -24, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[30][0], &ctx->ps[30][1], ctx->r[12] + -24, ctx->gqr[0]);
     // 0x803BAF00: stw
     MEM_WRITE32(ctx->r[12] + -36, ctx->r[31]);
     // 0x803BAF04: stw
@@ -11700,7 +11700,7 @@ label_803BBF10:
     // 0x803BBF1C: stfd
     MEM_WRITEF64(ctx->r[1] + 32, ctx->f[31]);
     // 0x803BBF20: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[1] + 40, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[1] + 40, ctx->gqr[0]);
     // 0x803BBF24: stw
     MEM_WRITE32(ctx->r[1] + 28, ctx->r[31]);
     // 0x803BBF28: stw
@@ -12241,7 +12241,7 @@ label_803BC304:
     // 0x803BC310: stfd
     MEM_WRITEF64(ctx->r[1] + 976, ctx->f[31]);
     // 0x803BC314: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[1] + 984, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[1] + 984, ctx->gqr[0]);
     // 0x803BC318: stw
     MEM_WRITE32(ctx->r[1] + 972, ctx->r[31]);
     // 0x803BC31C: stw
@@ -18124,47 +18124,47 @@ label_803BDD64:
     // 0x803BDD70: stfd
     MEM_WRITEF64(ctx->r[1] + 384, ctx->f[31]);
     // 0x803BDD74: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[1] + 392, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[1] + 392, ctx->gqr[0]);
     // 0x803BDD78: stfd
     MEM_WRITEF64(ctx->r[1] + 368, ctx->f[30]);
     // 0x803BDD7C: psq_st
-    PSQ_STORE_PAIR(ctx->ps[30][0], ctx->ps[30][1], ctx->r[1] + 376, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[30][0], &ctx->ps[30][1], ctx->r[1] + 376, ctx->gqr[0]);
     // 0x803BDD80: stfd
     MEM_WRITEF64(ctx->r[1] + 352, ctx->f[29]);
     // 0x803BDD84: psq_st
-    PSQ_STORE_PAIR(ctx->ps[29][0], ctx->ps[29][1], ctx->r[1] + 360, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[29][0], &ctx->ps[29][1], ctx->r[1] + 360, ctx->gqr[0]);
     // 0x803BDD88: stfd
     MEM_WRITEF64(ctx->r[1] + 336, ctx->f[28]);
     // 0x803BDD8C: psq_st
-    PSQ_STORE_PAIR(ctx->ps[28][0], ctx->ps[28][1], ctx->r[1] + 344, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[28][0], &ctx->ps[28][1], ctx->r[1] + 344, ctx->gqr[0]);
     // 0x803BDD90: stfd
     MEM_WRITEF64(ctx->r[1] + 320, ctx->f[27]);
     // 0x803BDD94: psq_st
-    PSQ_STORE_PAIR(ctx->ps[27][0], ctx->ps[27][1], ctx->r[1] + 328, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[27][0], &ctx->ps[27][1], ctx->r[1] + 328, ctx->gqr[0]);
     // 0x803BDD98: stfd
     MEM_WRITEF64(ctx->r[1] + 304, ctx->f[26]);
     // 0x803BDD9C: psq_st
-    PSQ_STORE_PAIR(ctx->ps[26][0], ctx->ps[26][1], ctx->r[1] + 312, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[26][0], &ctx->ps[26][1], ctx->r[1] + 312, ctx->gqr[0]);
     // 0x803BDDA0: stfd
     MEM_WRITEF64(ctx->r[1] + 288, ctx->f[25]);
     // 0x803BDDA4: psq_st
-    PSQ_STORE_PAIR(ctx->ps[25][0], ctx->ps[25][1], ctx->r[1] + 296, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[25][0], &ctx->ps[25][1], ctx->r[1] + 296, ctx->gqr[0]);
     // 0x803BDDA8: stfd
     MEM_WRITEF64(ctx->r[1] + 272, ctx->f[24]);
     // 0x803BDDAC: psq_st
-    PSQ_STORE_PAIR(ctx->ps[24][0], ctx->ps[24][1], ctx->r[1] + 280, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[24][0], &ctx->ps[24][1], ctx->r[1] + 280, ctx->gqr[0]);
     // 0x803BDDB0: stfd
     MEM_WRITEF64(ctx->r[1] + 256, ctx->f[23]);
     // 0x803BDDB4: psq_st
-    PSQ_STORE_PAIR(ctx->ps[23][0], ctx->ps[23][1], ctx->r[1] + 264, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[23][0], &ctx->ps[23][1], ctx->r[1] + 264, ctx->gqr[0]);
     // 0x803BDDB8: stfd
     MEM_WRITEF64(ctx->r[1] + 240, ctx->f[22]);
     // 0x803BDDBC: psq_st
-    PSQ_STORE_PAIR(ctx->ps[22][0], ctx->ps[22][1], ctx->r[1] + 248, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[22][0], &ctx->ps[22][1], ctx->r[1] + 248, ctx->gqr[0]);
     // 0x803BDDC0: stfd
     MEM_WRITEF64(ctx->r[1] + 224, ctx->f[21]);
     // 0x803BDDC4: psq_st
-    PSQ_STORE_PAIR(ctx->ps[21][0], ctx->ps[21][1], ctx->r[1] + 232, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[21][0], &ctx->ps[21][1], ctx->r[1] + 232, ctx->gqr[0]);
     // 0x803BDDC8: stw
     MEM_WRITE32(ctx->r[1] + 220, ctx->r[31]);
     // 0x803BDDCC: stw

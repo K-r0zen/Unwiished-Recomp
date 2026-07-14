@@ -8772,11 +8772,11 @@ label_8031D0E0:
     // 0x8031D0EC: stfd
     MEM_WRITEF64(ctx->r[1] + 80, ctx->f[31]);
     // 0x8031D0F0: psq_st
-    PSQ_STORE_PAIR(ctx->ps[31][0], ctx->ps[31][1], ctx->r[1] + 88, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[31][0], &ctx->ps[31][1], ctx->r[1] + 88, ctx->gqr[0]);
     // 0x8031D0F4: stfd
     MEM_WRITEF64(ctx->r[1] + 64, ctx->f[30]);
     // 0x8031D0F8: psq_st
-    PSQ_STORE_PAIR(ctx->ps[30][0], ctx->ps[30][1], ctx->r[1] + 72, ctx->gqr[0]);
+    PSQ_STORE_PAIR(&ctx->ps[30][0], &ctx->ps[30][1], ctx->r[1] + 72, ctx->gqr[0]);
     // 0x8031D0FC: stw
     MEM_WRITE32(ctx->r[1] + 60, ctx->r[31]);
     // 0x8031D100: stw
